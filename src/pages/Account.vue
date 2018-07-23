@@ -28,6 +28,7 @@
       <h1>Account</h1>
       <button class="update" v-on:click="modal='pass'">Update Password</button>
       <button class="viewAccount" v-on:click="modal='view'">View Account</button>
+      <button class="logOut" v-on:click="$emit('logout')">Log-Out</button>
     </div>
   </div>
 </template>

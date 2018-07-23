@@ -13,30 +13,37 @@
     </div>
     <div class="hoursPane">
       <div class="monday">
+        <div>Monday</div>
         <input v-model="hours.monday.open" placeholder="Open" />
         <input v-model="hours.monday.closed" placeholder="Closed" />
       </div>
       <div class="tuesday">
+        <div>Tuesday</div>
         <input v-model="hours.tuesday.open" placeholder="Open" />
         <input v-model="hours.tuesday.closed" placeholder="Closed" />
       </div>
       <div class="wednesday">
+        <div>Wednesday</div>
         <input v-model="hours.wednesday.open" placeholder="Open" />
         <input v-model="hours.wednesday.closed" placeholder="Closed" />
       </div>
       <div class="thursday">
+        <div>Thursday</div>
         <input v-model="hours.thursday.open" placeholder="Open" />
         <input v-model="hours.thursday.closed" placeholder="Closed" />
       </div>
       <div class="friday">
+        <div>Friday</div>
         <input v-model="hours.friday.open" placeholder="Open" />
         <input v-model="hours.friday.closed" placeholder="Closed" />
       </div>
       <div class="saturday">
+        <div>Saturday</div>
         <input v-model="hours.saturday.open" placeholder="Open" />
         <input v-model="hours.saturday.closed" placeholder="Closed" />
       </div>
       <div class="sunday">
+        <div>Sunday</div>
         <input v-model="hours.sunday.open" placeholder="Open" />
         <input v-model="hours.sunday.closed" placeholder="Closed" />
       </div>
@@ -56,38 +63,38 @@ export default {
       phone: '',
       hours: {
         monday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         tuesday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         wednesday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         thursday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         friday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         saturday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         },
         sunday: {
-          open: 0,
-          closed: 0
+          open: '',
+          closed: ''
         }
       },
       tags: '',
       meta: {
-        maleAverageAge: 0,
-        femaleAverageAge: 0
+        maleAverageAge: '',
+        femaleAverageAge: ''
       },
       imageURL: '',
       imageMapURL: ''

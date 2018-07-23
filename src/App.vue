@@ -47,7 +47,7 @@ export default {
       vue.user.id = user.id
       vue.user.admin = user.admin
       vue.loggedIn = true
-      vue.$router.push('/characters')
+      vue.$router.push('/')
     },
     logOut: function () {
       let vue = this
