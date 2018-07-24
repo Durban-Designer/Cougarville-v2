@@ -67,7 +67,7 @@ export default {
       vue.user.id = user.id
       vue.user.name = user.name
       vue.user.admin = user.admin
-      vue.$router.push('/characters')
+      vue.$router.push('/')
     }
   }
 }

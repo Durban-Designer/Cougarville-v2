@@ -27,6 +27,7 @@ import axios from 'axios'
 
 export default {
   name: 'search',
+  props: ['user', 'logged'],
   data () {
     return {
       barView: false,
