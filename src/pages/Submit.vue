@@ -1,53 +1,13 @@
 <template>
   <div class="main">
-    <h1>Submit a Location</h1>
-    <input v-model="name" placeholder="Bar Name" />
-    <input v-model="address" placeholder="Bar Address" />
-    <input v-model="phone" placeholder="Bar Phone" />
-    <input v-model="tags" placeholder="Bar Tags" />
-    <input v-model="imageURL" placeholder="Bar image URL" />
-    <input v-model="imageMapURL" placeholder="Bar Map Image URL" />
-    <div class="metaPane">
-      <input v-model="meta.maleAverageAge" placeholder="Male Average Age" />
-      <input v-model="meta.femaleAverageAge" placeholder="Female Average Age" />
-    </div>
-    <div class="hoursPane">
-      <div class="monday">
-        <div>Monday</div>
-        <input v-model="hours.monday.open" placeholder="Open" />
-        <input v-model="hours.monday.closed" placeholder="Closed" />
-      </div>
-      <div class="tuesday">
-        <div>Tuesday</div>
-        <input v-model="hours.tuesday.open" placeholder="Open" />
-        <input v-model="hours.tuesday.closed" placeholder="Closed" />
-      </div>
-      <div class="wednesday">
-        <div>Wednesday</div>
-        <input v-model="hours.wednesday.open" placeholder="Open" />
-        <input v-model="hours.wednesday.closed" placeholder="Closed" />
-      </div>
-      <div class="thursday">
-        <div>Thursday</div>
-        <input v-model="hours.thursday.open" placeholder="Open" />
-        <input v-model="hours.thursday.closed" placeholder="Closed" />
-      </div>
-      <div class="friday">
-        <div>Friday</div>
-        <input v-model="hours.friday.open" placeholder="Open" />
-        <input v-model="hours.friday.closed" placeholder="Closed" />
-      </div>
-      <div class="saturday">
-        <div>Saturday</div>
-        <input v-model="hours.saturday.open" placeholder="Open" />
-        <input v-model="hours.saturday.closed" placeholder="Closed" />
-      </div>
-      <div class="sunday">
-        <div>Sunday</div>
-        <input v-model="hours.sunday.open" placeholder="Open" />
-        <input v-model="hours.sunday.closed" placeholder="Closed" />
-      </div>
-    </div>
+    <h3>Submit a Location</h3>
+    <input class="name" v-model="name" placeholder="Bar Name" />
+    <input class="address" v-model="address" placeholder="Bar Address" />
+    <input class="phone" v-model="phone" placeholder="Bar Phone" />
+    <input class="tags" v-model="tags" placeholder="Bar Tags" />
+    <input class="imageURL" v-model="imageURL" placeholder="Bar image URL" />
+    <input class="notes" placeholder="General Notes"/>
+    <input class="hours" placeholder="Hours of Operation"/>
     <button class="submitBar" v-on:click="submitBar()">Submit</button>
   </div>
 </template>
@@ -61,43 +21,10 @@ export default {
       name: '',
       address: '',
       phone: '',
-      hours: {
-        monday: {
-          open: '',
-          closed: ''
-        },
-        tuesday: {
-          open: '',
-          closed: ''
-        },
-        wednesday: {
-          open: '',
-          closed: ''
-        },
-        thursday: {
-          open: '',
-          closed: ''
-        },
-        friday: {
-          open: '',
-          closed: ''
-        },
-        saturday: {
-          open: '',
-          closed: ''
-        },
-        sunday: {
-          open: '',
-          closed: ''
-        }
-      },
       tags: '',
-      meta: {
-        maleAverageAge: '',
-        femaleAverageAge: ''
-      },
       imageURL: '',
-      imageMapURL: ''
+      notes: '',
+      hours: ''
     }
   },
   methods: {
@@ -107,11 +34,10 @@ export default {
         name: vue.name,
         address: vue.address,
         phone: vue.phone,
-        hours: vue.hours,
         tags: vue.tags,
-        meta: vue.meta,
         imageURL: vue.imageURL,
-        imageMapURL: vue.imageMapURL
+        notes: vue.notes,
+        hours: vue.hours
       })
         .then(response => {
           console.log(response.data)
@@ -126,6 +52,82 @@ export default {
 
 <style scoped lang="less">
   .main {
-    margin-top: 120px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-rows: repeat(13, 40px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  h3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  .name {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 3;
+  }
+
+  .address {
+    margin-bottom: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 3;
+  }
+
+  .phone {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 4;
+  }
+
+  .tags {
+    margin-bottom: 10px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 4;
+  }
+
+  .imageURL {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 5;
+  }
+
+  .notes {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 9;
+  }
+
+  .hours {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
+
+  .submitBar {
+    margin-left: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 13;
   }
 </style>

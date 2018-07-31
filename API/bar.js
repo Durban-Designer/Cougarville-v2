@@ -13,98 +13,20 @@ var BarSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  hours: {
-          monday: {
-              open: {
-                  type: Number,
-                  required: false
-              },
-              closed: {
-                  type: Number,
-                  required: false
-              }
-          },
-          tuesday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-        wednesday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-        thursday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-        friday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-        saturday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-        sunday: {
-            open: {
-                type: Number,
-                required: false
-            },
-            closed: {
-                type: Number,
-                required: false
-            }
-        },
-      },
   tags: {
     type: String,
     required: false
-  },
-  meta: {
-      maleAverageAge: {
-          type: Number,
-          required: false
-      },
-      femaleAverageAge: {
-          type: Number,
-          required: false
-      }
   },
   imageURL: {
     type: String,
     required: false
   },
-  imageMapURL: {
-    type: String,
+  notes: {
+    type: string,
+    required: false
+  },
+  hours: {
+    type: string,
     required: false
   }
 })

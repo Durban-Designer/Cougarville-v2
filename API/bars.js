@@ -39,11 +39,10 @@ router.post("/", (req,res) => {
   name: req.body.name.trim(),
   address: req.body.address.trim(),
   phone: req.body.phone,
-  hours: req.body.hours,
   tags: req.body.tags === undefined ? "" : req.body.tags.trim(),
-  meta: req.body.meta,
   imageURL: req.body.imageURL === undefined ? "" : req.body.imageURL.trim(),
-  imageMapURL: req.body.imageMapURL === undefined ? "" : req.body.imageMapURL.trim()
+  notes: req.body.notes,
+  hours: req.body.hours
   })
 
   Bar.find({"address": newBar.address},function (err, Bar) {
@@ -79,11 +78,10 @@ router.put("/:id", (req, res) => {
           Bar.name = req.body.name || Bar.name;
           Bar.address = req.body.address || Bar.address;
           Bar.phone = req.body.phone || Bar.phone;
-          Bar.hours = req.body.hours || Bar.hours;
           Bar.tags = req.body.tags || Bar.tags;
-          Bar.meta = req.body.meta || Bar.meta;
           Bar.imageURL= req.body.imageURL || Bar.imageURL;
-          Bar.imageMapURL= req.body.imageMapURL || Bar.imageMapURL;
+          Bar.notes = req.body.notes || Bar.notes;
+          Bar.hours = req.body.hours || Bar.hours;
 
           Bar.save(function (err, Bar) {
               if (err) {
